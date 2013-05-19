@@ -32,8 +32,9 @@ class TextContainer(object):
 			
 	def update(self, menu_item):
 		for item in self.menu_items:
-			if item == menu_item:
-				item.colour = (255,69,72)
-				self.clicked = item
-			else:
-				item.colour = (255,0,4)
+			if not(item.static):
+				if item == menu_item:
+					item.colour = (255,0,4)
+					self.clicked = item
+				else:
+					item.colour = (255,0,4)

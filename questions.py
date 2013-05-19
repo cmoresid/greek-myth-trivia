@@ -42,7 +42,10 @@ class QuestionSet(object):
 	def next_question(self):
 		self.index = self.index + 1
 		
-		return self.questions[self.index]
+		if (self.index == len(self.questions)):
+			return None
+		else:
+			return self.questions[self.index]
 		
 		
 class Question(object):

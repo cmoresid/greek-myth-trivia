@@ -1,6 +1,7 @@
 import pygame
 
 from screens import *
+from questions import *
 
 class Game(object):
 	def __init__(self, options):
@@ -9,30 +10,28 @@ class Game(object):
 		# Set options
 		self.options = options
 		# Set screen size
-		self.screen = pygame.display.set_mode(self.options["size"], pygame.DOUBLEBUF, 32)
+		self.screen = pygame.display.set_mode(self.options["size"], pygame.SWSURFACE, 32)
 		# Set background image
 		self.bg_image = pygame.image.load(self.options["bg_img_file"]).convert()
 		# Start playing music
 		pygame.mixer.music.load(self.options["bg_music_file"])
 		# Set game running invariant
 		self.done = False
-		# Instantiate states
-		self.init_screen_states()
+		# Set initial screen
+		self.current_screen = TitleScreenState(self)
 		# Create clock
 		self.clock = pygame.time.Clock()
 		# Set title
 		pygame.display.set_caption(options["title"])
+		# Questions set for game
+		self.question_set = None
 		
-	def init_screen_states(self):
-		self.title_screen = TitleScreenState(self)
-		self.highscores_screen = HighScoreScreenState(self)
-		self.pregame_screen = PreGameScreenState(self)
-		self.question_screen = QuestionScreenState(self)
-		self.answer_screen = AnswerScreenState(self)
-		self.results_screen = ResultsScreenState(self)
+	def create_question_set(self, numquestions):
+		self.question_set = QuestionSet(numquestions, self.options["q_json_file"])
 		
-		self.current_screen = self.title_screen
-	
+	def next_question(self):
+		return self.question_set.next_question()
+		
 	def draw_background(self):
 		self.screen.blit(self.bg_image, [0,0])
 	

@@ -122,7 +122,7 @@ class TextWidget(observer.Subject):
     def __get_highlight(self):
         return self.__m_highlight
     def __set_highlight(self, highlight):
-        if (not(self.__m_highlight == highlight)):
+        if (not(self.__m_highlight == highlight) and not(self.static)):
             #Save the bold_rect
             if (self.__m_highlight):
                 self.bold_rect = self.rect
@@ -146,8 +146,9 @@ class TextWidget(observer.Subject):
     highlight_cursor = property(__get_highlight_cursor, __set_highlight_cursor)
 
     def __init__(self, text="", colour=(0,0,0), size=32
-                , highlight_increase = 0, font_filename=None
-                , show_highlight_cursor = True):
+                , highlight_increase = 0, font_filename = None
+                , show_highlight_cursor = False
+				, static = False):
         """Initialize the TextWidget
         @param text = "" - string - The text for the text widget
         @param colour = (0,0,0) - The colour of the text
@@ -175,6 +176,8 @@ class TextWidget(observer.Subject):
         self.__local_path = os.path.realpath(os.path.dirname(__file__))
 
         #property inits
+        self.static = static
+		
         self.__m_text = None
         self.__m_colour = None
         self.__m_size = None
