@@ -25,6 +25,10 @@ class Game(object):
 		pygame.display.set_caption(options["title"])
 		# Questions set for game
 		self.question_set = None
+		# Total time to answer question
+		self.total_time = 0
+		# Total answers correct
+		self.answers_correct = 0
 		
 	def create_question_set(self, numquestions):
 		self.question_set = QuestionSet(numquestions, self.options["q_json_file"])

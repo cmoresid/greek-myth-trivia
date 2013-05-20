@@ -21,10 +21,12 @@ class QuestionSet(object):
 			question.id = js_question["id"]
 			question.difficulty = js_question["difficulty"]
 			question.question_str = js_question["question_str"]
-			question.responses = js_question["responses"][0]
+			question.responses = js_question["responses"]
 			question.score = js_question["score"]
 			question.correct_response = js_question["correct_response"]
 			question.description = js_question["description"]
+			# shuffle responses
+			random.shuffle(question.responses)
 			
 			question_list.append(question)
 			

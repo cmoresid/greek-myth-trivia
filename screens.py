@@ -1,5 +1,6 @@
 import pygame
 import abc
+import time
 
 from menu import *
 from questions import *
@@ -186,8 +187,74 @@ class QuestionScreenState(GameState):
 		self.game = game
 		# Question
 		self.question = question
-		# Setup container
+		# Menu items
+		self.menu_items = []
+		# Setup question text
+		self.question_text = TextWidget(question.question_str, (0,0,0), static=True)
+		self.question_text.size = 24
+		self.question_text.font_filename = game.options["font"]
+		self.menu_items.append(self.question_text)
+		# Setup time text
+		self.current_time_text = TextWidget("0", (255,0,4), static=True)
+		self.current_time_text.size = 24
+		self.current_time_text.font_filename = game.options["font"]
+		self.current_time_text.rect.top = 10
+		self.current_time_text.rect.left = self.game.options["size"][0] - self.current_time_text.rect.width - 40
+		
+		self.current_time_label = TextWidget("Time:", (255,0,4), static=True)
+		self.current_time_label.size = 24
+		self.current_time_label.font_filename = game.options["font"]
+		self.current_time_label.rect.top = 10
+		self.current_time_label.rect.left = self.current_time_text.rect.left - self.current_time_label.rect.width - 10
+		
+		# Setup score text
+		self.score_text = TextWidget(str(question.score), (255,0,4), static=True)
+		self.score_text.size = 24
+		self.score_text.font_filename = game.options["font"]
+		self.score_text.rect.top = self.current_time_text.rect.bottom + 10
+		self.score_text.rect.left = self.game.options["size"][0] - self.score_text.rect.width - 20
+		
+		self.score_label = TextWidget("Score:", (255,0,4), static=True)
+		self.score_label.size = 24
+		self.score_label.font_filename = game.options["font"]
+		self.score_label.rect.top = self.score_text.rect.top
+		self.score_label.rect.left = self.score_text.rect.left - self.score_label.rect.width - 10
+		
+		# Setup responses
+		for response in self.question.responses:
+			response_text = TextWidget(response, (255,0,4))
+			response_text.size = 28
+			response_text.font_filename = game.options["font"]
+			self.menu_items.append(response_text)
+		# Menu container
+		self.menu_container = TextContainer(self.game.screen, self.menu_items, self.game.options["menu_container_colour"])
+		# Register observer
+		for item in self.menu_items:
+			item.attach(self.menu_container)
+		# For scoring scheme
+		self.next_score_time = 0
+		self.next_second_time = 0
+		# Current score
+		self.current_score = self.question.score
+		# Current time
+		self.current_time = 0
 	
+	def update_timer(self):
+		current_time = time.time()
+		
+		if self.next_score_time == 0:
+			self.next_score_time = current_time + 1
+		
+		if current_time >= self.next_score_time:
+			# Question loses 10% of score value every second
+			if self.current_score > 0:
+				self.current_score = int(self.current_score - (self.question.score*0.1))
+				self.score_text.text = str(self.current_score)
+			self.current_time = self.current_time + 1
+			self.current_time_text.text = str(self.current_time)
+			self.next_score_time = time.time() + 1
+			print self.current_score
+			
 	def onTitleScreen(self):
 		return
 		
@@ -198,9 +265,17 @@ class QuestionScreenState(GameState):
 		return
 		
 	def onQuestionScreen(self):
-		# Do something
-		return
-		
+		# Draw question box
+		self.menu_container.draw()
+		# Draw current time
+		self.current_time_label.draw(self.game.screen)
+		self.current_time_text.draw(self.game.screen)
+		# Draw score
+		self.score_label.draw(self.game.screen)
+		self.score_text.draw(self.game.screen)
+		# Update score
+		self.update_timer()
+	
 	def onAnswerScreen(self):
 		return
 		
@@ -208,13 +283,29 @@ class QuestionScreenState(GameState):
 		return
 		
 	def handle_event(self, event):
-		# Handle events	
+		self.menu_container.handle_event(event)
+		
+		if event.type == TEXT_WIDGET_CLICK:
+			user_response = event.text_widget.text
+			
+			if (user_response == self.question.correct_response):
+				print "Correct response."
+				self.game.answers_correct = self.game.answers_correct + 1
+				self.game.current_screen = AnswerScreenState(self.game, True)
+			else:
+				print "Incorrect!"
+				self.game.current_screen = AnswerScreenState(self.game, False)
+				
+			self.game.total_time = self.game.total_time + self.current_time
+		
 		return
 
 class AnswerScreenState(GameState):
-	def __init__(self, game):
+	def __init__(self, game, user_correct):
 		# Store reference to Game object
-		self.game = game	
+		self.game = game
+		# Was user's answer correct?
+		self.correct = user_correct
 	
 	def onTitleScreen(self):
 		return

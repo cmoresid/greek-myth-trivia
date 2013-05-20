@@ -18,7 +18,6 @@ class TextContainer(object):
 		container_width = widest_item.rect.width
 		
 		# Leave 5 pixels on for border
-		#container_height = container_height
 		container_width = container_width + 20
 		for item in self.menu_items:
 			container_height = container_height + item.rect.height + 10

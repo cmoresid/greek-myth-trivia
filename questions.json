@@ -6,14 +6,12 @@
 			"score" : 100,
 			"question_str": "Who was Persus' Father?",
 			"responses": [
-				{
-					"1" : "Zeus",
-					"2" : "Posiden",
-					"3" : "Hades",
-					"4" : "Hephaestus"
-				}
+					"Zeus",
+					"Posiden",
+					"Hades",
+					"Hephaestus"
 			],
-			"correct_response" : "1",
+			"correct_response" : "Zeus",
 			"description" : "Zeus + Someone were parents"
 		},
 		{
@@ -22,14 +20,12 @@
 			"score" : 100,
 			"question_str": "Who was Zeus?",
 			"responses": [
-				{
-					"1" : "King of the gods",
-					"2" : "Some hero",
-					"3" : "Hades in disguise",
-					"4" : "Nobody"
-				}
+					"King of the gods",
+					"Some hero",
+					"Hades in disguise",
+					"Nobody"
 			],
-			"correct_response" : "1",
+			"correct_response" : "King of the gods",
 			"description" : "Zeus was indeed the king of the gods"
 		}
 	]
