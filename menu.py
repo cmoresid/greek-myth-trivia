@@ -1,11 +1,12 @@
 import pygame
 		
 class TextContainer(object):	
-	def __init__(self, screen, menu_items, colour):
+	def __init__(self, screen, menu_items, colour, top=None):
 		self.screen = screen
 		self.menu_items = menu_items
 		self.clicked = None
 		self.colour = colour
+		self.top = top
 		# Create menu container
 		self.container_sf, self.container_rect = self.create_container()
 		# Realign menu items
@@ -25,6 +26,9 @@ class TextContainer(object):
 		menu_container_sf = pygame.Surface((container_width, container_height), pygame.SRCALPHA, 32)
 		menu_container_sf.fill(self.colour)
 		menu_container_rect = menu_container_sf.get_rect(center=self.screen.get_rect().center)
+		
+		if self.top != None:
+			menu_container_rect.top = self.top
 		
 		return (menu_container_sf, menu_container_rect)
 	

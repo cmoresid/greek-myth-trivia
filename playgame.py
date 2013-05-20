@@ -5,6 +5,8 @@ options = {
 	"size" : [700, 500],
 	"bg_music_file" : 'music/bg_music.mp3',
 	"bg_img_file" : 'img/bg_img.jpg',
+	"correct_img_file" : 'img/correct.png',
+	"incorrect_img_file" : 'img/incorrect.png',
 	"font" : 'font/adonais.ttf',
 	"fps" : 20,
 	"menu_container_colour" : (142,160,135,200),
