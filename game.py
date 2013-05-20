@@ -29,9 +29,13 @@ class Game(object):
 		self.total_time = 0
 		# Total answers correct
 		self.answers_correct = 0
+		# Total score
+		self.total_score = 0
 		
-	def create_question_set(self, numquestions):
+	def init_new_game(self, numquestions):
 		self.question_set = QuestionSet(numquestions, self.options["q_json_file"])
+		self.total_time = 0
+		self.answers_correct = 0
 		
 	def next_question(self):
 		return self.question_set.next_question()
