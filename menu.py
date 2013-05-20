@@ -1,12 +1,42 @@
 import pygame
 		
 class TextContainer(object):	
-	def __init__(self, screen, menu_items, container, pos):
+	def __init__(self, screen, menu_items, colour):
 		self.screen = screen
 		self.menu_items = menu_items
-		self.container = container
-		self.pos = pos
 		self.clicked = None
+		self.colour = colour
+		# Create menu container
+		self.container_sf, self.container_rect = self.create_container()
+		# Realign menu items
+		self.realign_menu_items()
+		
+	def create_container(self):
+		# Get item with largest width
+		widest_item = max(self.menu_items, key=lambda item: item.rect.width)
+		container_height = 0
+		container_width = widest_item.rect.width
+		
+		# Leave 5 pixels on for border
+		#container_height = container_height
+		container_width = container_width + 20
+		for item in self.menu_items:
+			container_height = container_height + item.rect.height + 10
+			
+		menu_container_sf = pygame.Surface((container_width, container_height), pygame.SRCALPHA, 32)
+		menu_container_sf.fill(self.colour)
+		menu_container_rect = menu_container_sf.get_rect(center=self.screen.get_rect().center)
+		
+		return (menu_container_sf, menu_container_rect)
+	
+	def realign_menu_items(self):
+		previous_rect = self.container_rect.top + 5
+		
+		for item in self.menu_items:
+			item.rect.center = self.container_rect.center
+			item.rect.top = previous_rect
+			
+			previous_rect = item.rect.bottom + 10
 	
 	def draw(self):
 		self.draw_container()
@@ -24,7 +54,7 @@ class TextContainer(object):
 				item.on_mouse_button_up(event)
 		
 	def draw_container(self):
-		self.screen.blit(self.container, self.pos)
+		self.screen.blit(self.container_sf, self.container_rect)
 		
 	def draw_menu_items(self):
 		for text in self.menu_items:

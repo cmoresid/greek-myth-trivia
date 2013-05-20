@@ -7,7 +7,7 @@ options = {
 	"bg_img_file" : 'img/bg_img.jpg',
 	"font" : 'font/adonais.ttf',
 	"fps" : 20,
-	"menu_container_color" : (142,160,135,200),
+	"menu_container_colour" : (142,160,135,200),
 	"q_json_file" : 'questions.json'
 }
 

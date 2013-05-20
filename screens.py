@@ -46,20 +46,14 @@ class TitleScreenState(GameState):
 		self.newgame_text = TextWidget("New Game", (255,0,4))
 		self.newgame_text.size = 40
 		self.newgame_text.font_filename = game.options["font"]
-		self.newgame_text.rect.center = self.game.screen.get_rect().center
-		self.newgame_text.rect.top = 200;
 		self.menu_items.append(self.newgame_text)
 		# High score text
 		self.highscore_text = TextWidget("High Scores", (255,0,4))
 		self.highscore_text.size = 40
 		self.highscore_text.font_filename = game.options["font"]
-		self.highscore_text.rect.center = self.game.screen.get_rect().center
-		self.highscore_text.rect.top = self.newgame_text.rect.bottom + 10;
 		self.menu_items.append(self.highscore_text)
 		# Menu container
-		menu_container_rect = pygame.Surface((250,90), pygame.SRCALPHA, 32)
-		menu_container_rect.fill(game.options["menu_container_color"])
-		self.menu_container = TextContainer(self.game.screen, self.menu_items, menu_container_rect, (220,200))
+		self.menu_container = TextContainer(game.screen, self.menu_items, game.options["menu_container_colour"])
 		# Attach observer
 		self.newgame_text.attach(self.menu_container)
 		self.highscore_text.attach(self.menu_container)
@@ -130,40 +124,28 @@ class PreGameScreenState(GameState):
 		self.game = game
 		# Text Items
 		self.menu_items = []
-		# Setup container
-		self.menu_container_sf = pygame.Surface((450, 170), pygame.SRCALPHA, 32)
-		self.menu_container_sf.fill(game.options["menu_container_color"])
-		self.menu_container_rect = self.menu_container_sf.get_rect(center=self.game.screen.get_rect().center)
 		# Question Text
 		self.question_text = TextWidget("How many questions do you want?", (0,0,0), static=True)
 		self.question_text.size = 24
 		self.question_text.font_filename = game.options["font"]
-		self.question_text.rect.center = self.menu_container_rect.center
-		self.question_text.rect.top = self.menu_container_rect.top + 5
 		self.menu_items.append(self.question_text)
 		# Responses Text
 		self.ten_questions_text = TextWidget("10", (255,0,4))
 		self.ten_questions_text.size = 32
 		self.ten_questions_text.font_filename = game.options["font"]
-		self.ten_questions_text.rect.center = self.menu_container_rect.center
-		self.ten_questions_text.rect.top = self.question_text.rect.bottom + 15
 		self.menu_items.append(self.ten_questions_text)
 		
 		self.twenty_questions_text = TextWidget("20", (255,0,4))
 		self.twenty_questions_text.size = 32
 		self.twenty_questions_text.font_filename = game.options["font"]
-		self.twenty_questions_text.rect.center = self.menu_container_rect.center
-		self.twenty_questions_text.rect.top = self.ten_questions_text.rect.bottom + 10
 		self.menu_items.append(self.twenty_questions_text)
 		
 		self.thirty_questions_text = TextWidget("30", (255,0,4))
 		self.thirty_questions_text.size = 32
 		self.thirty_questions_text.font_filename = game.options["font"]
-		self.thirty_questions_text.rect.center = self.menu_container_rect.center
-		self.thirty_questions_text.rect.top = self.twenty_questions_text.rect.bottom + 10
 		self.menu_items.append(self.thirty_questions_text)
 		# Container
-		self.menu_container = TextContainer(self.game.screen, self.menu_items, self.menu_container_sf, self.menu_container_rect)
+		self.menu_container = TextContainer(self.game.screen, self.menu_items, self.game.options["menu_container_colour"])
 		# Attach observer
 		self.ten_questions_text.attach(self.menu_container)
 		self.twenty_questions_text.attach(self.menu_container)
@@ -204,6 +186,7 @@ class QuestionScreenState(GameState):
 		self.game = game
 		# Question
 		self.question = question
+		# Setup container
 	
 	def onTitleScreen(self):
 		return
