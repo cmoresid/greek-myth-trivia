@@ -19,7 +19,6 @@ class QuestionSet(object):
 		for js_question in self.js_questions:
 			question = Question()
 			question.id = js_question["id"]
-			question.difficulty = js_question["difficulty"]
 			question.question_str = js_question["question_str"]
 			question.responses = js_question["responses"]
 			question.score = js_question["score"]
@@ -53,10 +52,9 @@ class QuestionSet(object):
 class Question(object):
 	def __init__(self):
 		self.id = 0
-		self.difficulty = ""
 		self.score = 0
-		self.question_str = ""
+		self.question_str = []
 		self.responses = {}
 		self.correct_response = ""
-		self.description = ""
+		self.description = []
 		

@@ -82,6 +82,7 @@ class Game(object):
 		self.current_screen.onPreGameScreen()
 		self.current_screen.onQuestionScreen()
 		self.current_screen.onAnswerScreen()
+		self.current_screen.onAnswerDescriptionScreen()
 		self.current_screen.onResultsScreen()
 			
 		

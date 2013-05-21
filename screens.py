@@ -31,6 +31,10 @@ class GameState(object):
 		return
 		
 	@abc.abstractmethod
+	def onAnswerDescriptionScreen(self):
+		return
+		
+	@abc.abstractmethod
 	def onResultsScreen(self):
 		return
 		
@@ -78,6 +82,9 @@ class TitleScreenState(GameState):
 	def onAnswerScreen(self):
 		return
 		
+	def onAnswerDescriptionScreen(self):
+		return
+		
 	def onResultsScreen(self):
 		return
 		
@@ -111,6 +118,9 @@ class HighScoreScreenState(GameState):
 		return
 		
 	def onAnswerScreen(self):
+		return
+		
+	def onAnswerDescriptionScreen(self):
 		return
 		
 	def onResultsScreen(self):
@@ -169,6 +179,9 @@ class PreGameScreenState(GameState):
 	def onAnswerScreen(self):
 		return
 		
+	def onAnswerDescriptionScreen(self):
+		return
+		
 	def onResultsScreen(self):
 		return
 		
@@ -192,33 +205,34 @@ class QuestionScreenState(GameState):
 		self.question = game.next_question()
 		# Menu items
 		if self.question != None:
-			self.menu_items = []
+			menu_items = []
 			# Setup question text
-			self.question_text = TextWidget(self.question.question_str, (0,0,0), static=True)
-			self.question_text.size = 24
-			self.question_text.font_filename = game.options["font"]
-			self.menu_items.append(self.question_text)
+			for question in self.question.question_str:
+				question_text = TextWidget(question, (0,0,0), static=True)
+				question_text.size = 24
+				question_text.font_filename = game.options["font"]
+				menu_items.append(question_text)
 			# Setup time text
-			self.current_time_text = TextWidget("0", (255,0,4), static=True)
+			self.current_time_text = TextWidget("0", (0,0,0), static=True)
 			self.current_time_text.size = 24
 			self.current_time_text.font_filename = game.options["font"]
 			self.current_time_text.rect.top = 10
 			self.current_time_text.rect.left = self.game.options["size"][0] - self.current_time_text.rect.width - 40
 		
-			self.current_time_label = TextWidget("Time:", (255,0,4), static=True)
+			self.current_time_label = TextWidget("Time:", (0,0,0), static=True)
 			self.current_time_label.size = 24
 			self.current_time_label.font_filename = game.options["font"]
 			self.current_time_label.rect.top = 10
 			self.current_time_label.rect.left = self.current_time_text.rect.left - self.current_time_label.rect.width - 10
 		
 			# Setup score text
-			self.score_text = TextWidget(str(self.question.score), (255,0,4), static=True)
+			self.score_text = TextWidget(str(self.question.score), (0,0,0), static=True)
 			self.score_text.size = 24
 			self.score_text.font_filename = game.options["font"]
 			self.score_text.rect.top = self.current_time_text.rect.bottom + 10
 			self.score_text.rect.left = self.game.options["size"][0] - self.score_text.rect.width - 20
 		
-			self.score_label = TextWidget("Score:", (255,0,4), static=True)
+			self.score_label = TextWidget("Score:", (0,0,0), static=True)
 			self.score_label.size = 24
 			self.score_label.font_filename = game.options["font"]
 			self.score_label.rect.top = self.score_text.rect.top
@@ -229,11 +243,11 @@ class QuestionScreenState(GameState):
 				response_text = TextWidget(response, (255,0,4))
 				response_text.size = 28
 				response_text.font_filename = game.options["font"]
-				self.menu_items.append(response_text)
+				menu_items.append(response_text)
 			# Menu container
-			self.menu_container = TextContainer(self.game.screen, self.menu_items, self.game.options["menu_container_colour"])
+			self.menu_container = TextContainer(self.game.screen, menu_items, self.game.options["menu_container_colour"])
 			# Register observer
-			for item in self.menu_items:
+			for item in menu_items:
 				item.attach(self.menu_container)
 			# For scoring scheme
 			self.next_score_time = 0
@@ -287,6 +301,9 @@ class QuestionScreenState(GameState):
 	def onAnswerScreen(self):
 		return
 		
+	def onAnswerDescriptionScreen(self):
+		return
+		
 	def onResultsScreen(self):
 		return
 		
@@ -294,29 +311,29 @@ class QuestionScreenState(GameState):
 		if self.question != None:
 			self.menu_container.handle_event(event)
 		
-			if event.type == TEXT_WIDGET_CLICK:
+			if event.type == TEXT_WIDGET_CLICK and not(event.text_widget.text in self.question.question_str):
 				user_response = event.text_widget.text
 				# fix here
 				self.game.current_screen = None
 				if (user_response == self.question.correct_response):
 					self.game.answers_correct = self.game.answers_correct + 1
 					self.game.total_score = self.game.total_score + self.current_score
-					self.game.current_screen = AnswerScreenState(self.game, True)
+					self.game.current_screen = AnswerScreenState(self.game, self.question, True)
 				else:
-					self.game.current_screen = AnswerScreenState(self.game, False)
+					self.game.current_screen = AnswerScreenState(self.game, self.question, False)
 				
 				self.game.total_time = self.game.total_time + self.current_time
 		
 		return
 
 class AnswerScreenState(GameState):
-	def __init__(self, game, user_correct, description=None):
+	def __init__(self, game, question, user_correct):
 		# Store reference to Game object
 		self.game = game
 		# Was user's answer correct?
 		self.correct = user_correct
 		# Detailed answer
-		self.description = description
+		self.question = question
 		# Menu items
 		self.menu_items = []
 		# Images
@@ -374,7 +391,10 @@ class AnswerScreenState(GameState):
 			self.play_sound = True
 		
 		return
-		
+	
+	def onAnswerDescriptionScreen(self):
+		return
+	
 	def onResultsScreen(self):
 		return
 		
@@ -383,10 +403,60 @@ class AnswerScreenState(GameState):
 		self.menu_container.handle_event(event)
 		
 		# Fix this!!
-		if event.type == TEXT_WIDGET_CLICK:
+		if event.type == TEXT_WIDGET_CLICK and event.text_widget == self.continue_text:
 			self.game.current_screen = None
-			self.game.current_screen = QuestionScreenState(self.game)
+			self.game.current_screen = AnswerDescriptionScreenState(self.game, self.question)
 		
+		return
+		
+class AnswerDescriptionScreenState(GameState):
+	def __init__(self, game, question):
+		self.game = game
+		self.question = question
+		
+		menu_items = []
+		for description in self.question.description:
+			description_text = TextWidget(description, (0,0,0), static=True)
+			description_text.size = 24
+			description_text.font_filename = game.options["font"]
+			menu_items.append(description_text)
+			
+		self.continue_text = TextWidget("Continue", (255,0,4))
+		self.continue_text.size = 40
+		self.continue_text.font_filename = game.options["font"]
+		menu_items.append(self.continue_text)
+			
+		self.menu_container = TextContainer(game.screen, menu_items, game.options["menu_container_colour"])
+		
+	def onTitleScreen(self):
+		return
+		
+	def onHighScoreScreen(self):
+		return
+		
+	def onPreGameScreen(self):
+		return
+		
+	def onQuestionScreen(self):
+		return
+		
+	def onAnswerScreen(self):
+		return
+		
+	def onAnswerDescriptionScreen(self):
+		self.menu_container.draw()
+	
+		return	
+	
+	def onResultsScreen(self):
+		return
+		
+	def handle_event(self, event):
+		self.menu_container.handle_event(event)
+		
+		if event.type == TEXT_WIDGET_CLICK and event.text_widget == self.continue_text:
+			self.game.current_screen = QuestionScreenState(self.game)
+	
 		return
 
 class ResultsScreenState(GameState):
@@ -400,38 +470,38 @@ class ResultsScreenState(GameState):
 		self.container_rect = self.container_sf.get_rect(center=game.screen.get_rect().center)
 		self.container_rect.top = 100
 		
-		self.time_label = TextWidget("Time:", (255,0,4), static=True)
+		self.time_label = TextWidget("Time:", (0,0,0), static=True)
 		self.time_label.size = 32
 		self.time_label.font_filename = game.options["font"]
 		self.time_label.rect.top = self.container_rect.top + 5
 		self.time_label.rect.left = self.container_rect.left + 5
 		
-		self.time_text = TextWidget(str(game.total_time) + " secs", (255,0,4), static=True)
+		self.time_text = TextWidget(str(game.total_time) + " secs", (0,0,0), static=True)
 		self.time_text.size = 32
 		self.time_text.font_filename = game.options["font"]
 		self.time_text.rect.top = self.time_label.rect.top
 		self.time_text.rect.left = self.time_label.rect.left + self.time_label.rect.width + 5
 		
-		self.score_label = TextWidget("Score:", (255,0,4), static=True)
+		self.score_label = TextWidget("Score:", (0,0,0), static=True)
 		self.score_label.size = 32
 		self.score_label.font_filename = game.options["font"]
 		self.score_label.rect.top = self.time_text.rect.bottom + 10
 		self.score_label.rect.left = self.container_rect.left + 5
 		
-		self.score_text = TextWidget(str(game.total_score), (255,0,4), static=True)
+		self.score_text = TextWidget(str(game.total_score), (0,0,0), static=True)
 		self.score_text.size = 32
 		self.score_text.font_filename = game.options["font"]
 		self.score_text.rect.top = self.score_label.rect.top
 		self.score_text.rect.left = self.score_label.rect.left + self.score_label.rect.width + 5
 	
-		self.correct_label = TextWidget("Correct:", (255,0,4), static=True)
+		self.correct_label = TextWidget("Correct:", (0,0,0), static=True)
 		self.correct_label.size = 32
 		self.correct_label.font_filename = game.options["font"]
 		self.correct_label.rect.top = self.score_text.rect.bottom + 10
 		self.correct_label.rect.left = self.container_rect.left + 5
 		
 		total_correct = str(int(game.answers_correct/float(len(game.question_set.questions))*100)) + "%"
-		self.correct_text = TextWidget(total_correct, (255,0,4), static=True)
+		self.correct_text = TextWidget(total_correct, (0,0,0), static=True)
 		self.correct_text.size = 32
 		self.correct_text.font_filename = game.options["font"]
 		self.correct_text.rect.top = self.correct_label.rect.top
@@ -465,6 +535,9 @@ class ResultsScreenState(GameState):
 	def onAnswerScreen(self):
 		return
 		
+	def onAnswerDescriptionScreen(self):
+		return	
+	
 	def onResultsScreen(self):
 		self.draw_container()
 	

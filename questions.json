@@ -4,29 +4,37 @@
 			"id" : 1,
 			"difficulty" : "Neophyte",
 			"score" : 100,
-			"question_str": "Who was Persus' Father?",
+			"question_str": [
+				"Who was Persus' Father?"
+			],
 			"responses": [
-					"Zeus",
-					"Posiden",
-					"Hades",
-					"Hephaestus"
+				"Zeus",
+				"Posiden",
+				"Hades",
+				"Hephaestus"
 			],
 			"correct_response" : "Zeus",
-			"description" : "Zeus + Someone were parents"
+			"description" : [
+				"Zeus + Someone were parents"
+			]
 		},
 		{
 			"id" : 2,
 			"difficulty" : "Neophyte",
 			"score" : 100,
-			"question_str": "Who was Zeus?",
+			"question_str": [
+				"Who was Zeus?"
+			],
 			"responses": [
-					"King of the gods",
-					"Some hero",
-					"Hades in disguise",
-					"Nobody"
+				"King of the gods",
+				"Some hero",
+				"Hades in disguise",
+				"Nobody"
 			],
 			"correct_response" : "King of the gods",
-			"description" : "Zeus was indeed the king of the gods"
+			"description" : [
+				"Zeus was indeed the king of the gods"
+			]
 		}
 	]
 }
