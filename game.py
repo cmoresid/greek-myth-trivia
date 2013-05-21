@@ -5,6 +5,8 @@ from questions import *
 
 class Game(object):
 	def __init__(self, options):
+		# Initialize mixer
+		pygame.mixer.pre_init(44100, -16, 2, 2048)
 		# Initialize pygame
 		pygame.init()
 		# Set options
@@ -31,6 +33,10 @@ class Game(object):
 		self.answers_correct = 0
 		# Total score
 		self.total_score = 0
+		# Correct sound
+		self.correct_sound = pygame.mixer.Sound(self.options["correct_sound_file"])
+		# Incorrect sound
+		self.incorrect_sound = pygame.mixer.Sound(self.options["incorrect_sound_file"])
 		
 	def init_new_game(self, numquestions):
 		self.question_set = QuestionSet(numquestions, self.options["q_json_file"])
@@ -45,7 +51,7 @@ class Game(object):
 	
 	def run(self):
 		# Start playing music
-		pygame.mixer.music.play()
+		pygame.mixer.music.play(-1)
 		# Game loop
 		while self.done == False:
 			# Pass event to the current state and see

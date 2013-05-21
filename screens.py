@@ -343,6 +343,7 @@ class AnswerScreenState(GameState):
 		
 		self.menu_container = TextContainer(game.screen, self.menu_items, game.options["menu_container_colour"], top=self.result_text.rect.bottom + 60)
 		
+		self.play_sound = False
 	
 	def draw_result_img(self):
 		self.game.screen.blit(self.image_sf, self.image_rect)
@@ -363,6 +364,14 @@ class AnswerScreenState(GameState):
 		self.draw_result_img()
 		self.result_text.draw(self.game.screen)
 		self.menu_container.draw()
+		
+		if not(self.play_sound):
+			if self.correct:
+				self.game.correct_sound.play()
+			else:
+				self.game.incorrect_sound.play()
+				
+			self.play_sound = True
 		
 		return
 		
@@ -386,7 +395,7 @@ class ResultsScreenState(GameState):
 		self.game = game
 		self.input = Input(maxlength=3, x=30, y= 40, color=(255,0,4), prompt="Name:")
 		# Stats
-		self.container_sf = pygame.Surface((215, 125), pygame.SRCALPHA, 32)
+		self.container_sf = pygame.Surface((220, 125), pygame.SRCALPHA, 32)
 		self.container_sf.fill(game.options["menu_container_colour"])
 		self.container_rect = self.container_sf.get_rect(center=game.screen.get_rect().center)
 		self.container_rect.top = 100
@@ -397,7 +406,7 @@ class ResultsScreenState(GameState):
 		self.time_label.rect.top = self.container_rect.top + 5
 		self.time_label.rect.left = self.container_rect.left + 5
 		
-		self.time_text = TextWidget(str(game.total_time), (255,0,4), static=True)
+		self.time_text = TextWidget(str(game.total_time) + " secs", (255,0,4), static=True)
 		self.time_text.size = 32
 		self.time_text.font_filename = game.options["font"]
 		self.time_text.rect.top = self.time_label.rect.top
@@ -468,7 +477,6 @@ class ResultsScreenState(GameState):
 		self.correct_text.draw(self.game.screen)
 		
 		self.menu_container.draw()
-		
 		
 		return
 		
