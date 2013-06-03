@@ -12,7 +12,7 @@ options = {
 	"font" : 'font/adonais.ttf',
 	"fps" : 20,
 	"menu_container_colour" : (142,160,135,200),
-	"q_json_file" : 'questions.json'
+	"q_json_file" : 'data/questions.json'
 }
 
 if __name__ == "__main__":
