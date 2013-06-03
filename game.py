@@ -1,5 +1,9 @@
 import pygame
-import pygame._view
+
+try:
+	import pygame._view
+except ImportError:
+	pass
 
 from screens import *
 from questions import *
