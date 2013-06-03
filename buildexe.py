@@ -83,7 +83,7 @@ class BuildExe:
         self.zipfile_name = None
  
         #Dist directory
-        self.dist_dir ='distribution'
+        self.dist_dir ='dist'
  
     ## Code from DistUtils tutorial at http://wiki.python.org/moin/Distutils/Tutorial
     ## Originally borrowed from wxPython's setup and config files
@@ -163,9 +163,47 @@ class BuildExe:
         
         if os.path.isdir('build'): #Clean up build dir
             shutil.rmtree('build')
- 
+
+def gen_files(dirname, pattern):
+    for file in os.listdir(dirname):
+        if file.endswith(pattern):
+            yield os.path.join(dirname, file)
+
 if __name__ == '__main__':
     if operator.lt(len(sys.argv), 2):
         sys.argv.append('py2exe')
-    BuildExe().run() #Run generation
+    myexe = BuildExe() #Run generation
+    myexe.run()
+
+    music_dir = os.path.join(myexe.dist_dir, "music")
+    img_dir = os.path.join(myexe.dist_dir, "img")
+    font_dir = os.path.join(myexe.dist_dir, "font")
+    data_dir = os.path.join(myexe.dist_dir, "data")
+
+    print "\nCopying data files..."
+
+    copy_music = lambda dirpath, contents: set(contents) - set(shutil.ignore_patterns("*.mp3","*.ogg")(dirpath,contents))
+    copy_img = lambda dirpath, contents: set(contents) - set(shutil.ignore_patterns("*.png","*.jpg")(dirpath,contents))
+    copy_font = lambda dirpath, contents: set(contents) - set(shutil.ignore_patterns("*.ttf")(dirpath,contents))
+    copy_data = lambda dirpath, contents: set(contents) - set(shutil.ignore_patterns("*.json")(dirpath,contents))
+
+    if not(os.path.exists(music_dir)):
+        shutil.rmtree(music_dir, True)
+        shutil.copytree(myexe.dist_dir, music_dir, ignore=copy_music)
+    if not(os.path.exists(img_dir)):
+        shutil.rmtree(img_dir, True)
+        shutil.copytree(myexe.dist_dir, img_dir, ignore=copy_img)
+    if not(os.path.exists(font_dir)):
+        shutil.rmtree(font_dir, True)
+        shutil.copytree(myexe.dist_dir, font_dir, ignore=copy_font)
+    if not (os.path.exists(data_dir)):
+        shutil.rmtree(data_dir, True)
+        shutil.copytree(myexe.dist_dir, data_dir, ignore=copy_data)
+
+    print "Remove unused files...\n"
+
+    remove_files = ("jpg","mp3","ogg","png","ttf","json")
+    for f in gen_files('dist', remove_files):
+        os.remove(f)
+
     raw_input("Press any key to continue") #Pause to let user see that things ends 

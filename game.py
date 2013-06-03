@@ -1,4 +1,5 @@
 import pygame
+import pygame._view
 
 from screens import *
 from questions import *
