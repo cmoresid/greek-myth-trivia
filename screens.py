@@ -54,15 +54,15 @@ class TitleScreenState(GameState):
 		self.newgame_text.font_filename = game.options["font"]
 		self.menu_items.append(self.newgame_text)
 		# High score text
-		self.highscore_text = TextWidget("High Scores", (255,0,4))
-		self.highscore_text.size = 40
-		self.highscore_text.font_filename = game.options["font"]
-		self.menu_items.append(self.highscore_text)
+		#self.highscore_text = TextWidget("High Scores", (255,0,4))
+		#self.highscore_text.size = 40
+		#self.highscore_text.font_filename = game.options["font"]
+		#self.menu_items.append(self.highscore_text)
 		# Menu container
 		self.menu_container = TextContainer(game.screen, self.menu_items, game.options["menu_container_colour"])
 		# Attach observer
 		self.newgame_text.attach(self.menu_container)
-		self.highscore_text.attach(self.menu_container)
+		#self.highscore_text.attach(self.menu_container)
 			
 	def onTitleScreen(self):
 		# Render menu
@@ -241,7 +241,7 @@ class QuestionScreenState(GameState):
 			# Setup responses
 			for response in self.question.responses:
 				response_text = TextWidget(response, (255,0,4))
-				response_text.size = 28
+				response_text.size = 18
 				response_text.font_filename = game.options["font"]
 				menu_items.append(response_text)
 			# Menu container

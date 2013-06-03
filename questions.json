@@ -2,38 +2,56 @@
 	"questions" : [
 		{
 			"id" : 1,
-			"difficulty" : "Neophyte",
-			"score" : 100,
+			"score" : 80,
 			"question_str": [
-				"Who was Persus' Father?"
+				"Xenophanes disputed the idea that the",
+				"gods possessed human-like characteristics."
 			],
 			"responses": [
-				"Zeus",
-				"Posiden",
-				"Hades",
-				"Hephaestus"
+				"True",
+				"False"
 			],
-			"correct_response" : "Zeus",
+			"correct_response" : "True",
 			"description" : [
-				"Zeus + Someone were parents"
+				"Xenophanes criticized the idea that the gods were",
+				"anthropomorphic. The notion of anthropomorphic gods",
+				"was a commonly held belief in his time."
 			]
 		},
 		{
 			"id" : 2,
-			"difficulty" : "Neophyte",
 			"score" : 100,
 			"question_str": [
-				"Who was Zeus?"
+				"Herodotus was sometimes known as the..."
 			],
 			"responses": [
-				"King of the gods",
-				"Some hero",
-				"Hades in disguise",
-				"Nobody"
+				"Father of History",
+				"Master of Logic",
+				"Queen Maker",
+				"None of the above"
 			],
-			"correct_response" : "King of the gods",
+			"correct_response" : "Father of History",
 			"description" : [
-				"Zeus was indeed the king of the gods"
+				"He also interpreted myth in a historical",
+				"sense; trying to rationalize myths based",
+				"on a historical context."
+			]
+		},
+		{
+			"id" : 3,
+			"score" : 100,
+			"question_str": [
+				"What is an euhemerism?"
+			],
+			"responses": [
+				"Myth as an account of historical important figures and events",
+				"A type of constellation",
+				"Alternative reality/dimension"
+			],
+			"correct_response" : "Myth as an account of historical important figures and events",
+			"description" : [
+				"Named after Euhemeros, the man who was credited",
+				"with its original usage."
 			]
 		}
 	]
