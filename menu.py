@@ -21,7 +21,8 @@ class TextContainer(object):
 		# Leave 5 pixels on for border
 		container_width = container_width + 20
 		for item in self.menu_items:
-			container_height = container_height + item.rect.height + 10
+			if item.text != "":
+				container_height = container_height + item.rect.height + 10
 			
 		menu_container_sf = pygame.Surface((container_width, container_height), pygame.SRCALPHA, 32)
 		menu_container_sf.fill(self.colour)
@@ -36,10 +37,11 @@ class TextContainer(object):
 		previous_rect = self.container_rect.top + 5
 		
 		for item in self.menu_items:
-			item.rect.center = self.container_rect.center
-			item.rect.top = previous_rect
+			if item.text != "":
+				item.rect.center = self.container_rect.center
+				item.rect.top = previous_rect
 			
-			previous_rect = item.rect.bottom + 10
+				previous_rect = item.rect.bottom + 10
 	
 	def draw(self):
 		self.draw_container()

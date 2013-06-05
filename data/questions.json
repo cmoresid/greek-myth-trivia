@@ -27,8 +27,7 @@
 			"responses": [
 				"Father of History",
 				"Master of Logic",
-				"Queen Maker",
-				"None of the above"
+				"Queen Maker"
 			],
 			"correct_response" : "Father of History",
 			"description" : [
@@ -41,7 +40,7 @@
 			"id" : 3,
 			"score" : 100,
 			"question_str": [
-				"What is an euhemerism?"
+				"What is euhemerism?"
 			],
 			"responses": [
 				"Myth as an account of historical important figures and events",
@@ -52,6 +51,243 @@
 			"description" : [
 				"Named after Euhemeros, the man who was credited",
 				"with its original usage."
+			]
+		},
+		{
+			"id" : 4,
+			"score" : 100,
+			"question_str": [
+				"The people we know as Greek first",
+				"entered Greece around..."
+			],
+			"responses": [
+				"1000 BC",
+				"2100 BC",
+				"2400 BC",
+				"700 BC"
+			],
+			"correct_response" : "2100 BC",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 5,
+			"score" : 50,
+			"question_str": [
+				"The Greek's greatest natural resource was..."
+			],
+			"responses": [
+				"the sea",
+				"marble",
+				"gold",
+				"silver"
+			],
+			"correct_response" : "the sea",
+			"description" : [
+				"Greece is centered around the",
+				"Aegean Sea; its most ubiquitous",
+				"resource."
+			]
+		},
+		{
+			"id" : 6,
+			"score": 50,
+			"question_str": [
+				"What time frame was known as",
+				"the Roman period?"
+			],
+			"responses": [
+				"30 BC - 1453 BC",
+				"1600 BC - 750 BC",
+				"323 BC - 30 BC",
+				"3000 BC - 1600 BC"
+			],
+			"correct_response" : "30 BC - 1453 BC",
+			"description" : [
+				"The Romans were heavily influenced",
+				"by Greek culture and incorporated it",
+				"into their own culture."
+			]
+		},
+		{
+			"id" : 7,
+			"score" : 50,
+			"question_str": [
+				"What time frame was known as",
+				"the Early to Middle Bronze period?"
+			],
+			"responses": [
+				"30 BC - 1453 BC",
+				"3000 BC - 1600 BC",
+				"490 BC - 323 BC",
+				"323 BC - 30 BC"
+			],
+			"correct_response" : "3000 BC - 1600 BC",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 8,
+			"score" : 50,
+			"question_str": [
+				"What time frame was known as",
+				"the Classical period?"
+			],
+			"responses": [
+				"30 BC - 1453 BC",
+				"3000 BC - 1600 BC",
+				"490 BC - 323 BC",
+				"323 BC - 30 BC"
+			],
+			"correct_response" : "490 BC - 323 BC",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 9,
+			"score" : 50,
+			"question_str": [
+				"What time frame was known as the",
+				"Archaic period?"
+			],
+			"responses": [
+				"800 BC - 490 BC",
+				"3000 BC - 1600 BC",
+				"490 BC - 323 BC",
+				"323 BC - 30 BC"
+			],
+			"correct_response" : "800 BC - 490 BC",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 10,
+			"score" : 120,
+			"question_str": [
+				"What is does Potnia Theron",
+				"mean?"
+			],
+			"responses": [
+				"Mistress of the Animals",
+				"Light bearer",
+				"Of divinity",
+				"Pouch of the gods"
+			],
+			"correct_response" : "Mistress of the Animals",
+			"description" : [
+				"Used to describe goddesses with",
+				"whom were associated with animals."
+			]
+		},
+		{
+			"id" : 11,
+			"score" : 75,
+			"question_str": [
+				"What does etiological mean?"
+			],
+			"responses": [
+				"To explain something; explanatory",
+				"Explain the existence of a word",
+				"Pertaining to the study of words"
+			],
+			"correct_response" : "To explain something; explanatory",
+			"description" : [
+				"Etiology is the study of",
+				"causation, or origination"
+			]
+		},
+		{
+			"id" : 12,
+			"score" : 100,
+			"question_str": [
+				"What is the significance of",
+				"the island of Delos?"
+			],
+			"responses": [
+				"Birth place of Apollo and Artemis",
+				"Location of the first temple of Zeus",
+				"Island where King Minos reigned",
+				"Island favoured by Aphrodite"
+			],
+			"correct_response" : "Birth place of Apollo and Artemis",
+			"description" : [
+				"Sacred island; out of respect, no being",
+				"was allowed to die or be born on Delos."
+			]
+		},
+		{
+			"id" : 13,
+			"score" : 75,
+			"question_str": [
+				"What does chthonic mean?"
+			],
+			"responses": [
+				"Pertaining to the Earth",
+				"Pertaining to Death",
+				"Describing the ocean",
+				"Describing sea monsters"
+			],
+			"correct_response" : "Pertaining to the Earth",
+			"description" : [
+				"From the Greek word chthonios, which",
+				"means 'in, under, or beneath the earth'."
+			]
+		},
+		{
+			"id" : 14,
+			"score" : 75,
+			"question_str": [
+				"What is 'xenia'?"
+			],
+			"responses": [
+				"The 'guest/host' relationship",
+				"Pertaining to the Earth",
+				"Honor",
+				"Gifts of Honor"
+			],
+			"correct_response" : "The 'guest/host' relationship",
+			"description" : [
+				"Xenia is the ancient Greek",
+				"concept of hospitality (wikipedia)."
+			]
+		},
+		{
+			"id" : 15,
+			"score" : 75,
+			"question_str": [
+				"What was the 'aegis'?"
+			],
+			"responses": [
+				"Ancient Greek artifact",
+				"Shield/Buckler used by Zeus and Athena",
+				"Famous Greek weapon used by Perseus",
+				"No such item mentioned in literature"
+			],
+			"correct_response" : "Shield/Buckler used by Zeus and Athena",
+			"description" : [
+				"The 'aegis' was originally mentioned",
+				"by Homer in the Illiad."
+			]
+		},
+		{
+			"id" : 16,
+			"score" : 100,
+			"question_str": [
+				"What was the 'omphalos'?"
+			],
+			"responses": [
+				"Stone given to Cronus in Zeus' place",
+				"Shield/Buckler used by Zeus and Athena",
+				"Magic Javelin",
+				"Golden automaton guarding Crete"
+			],
+			"correct_response" : "Stone given to Cronus in Zeus' place",
+			"description" : [
+				"The word 'omphalos' mean 'navel'."
 			]
 		}
 	]
