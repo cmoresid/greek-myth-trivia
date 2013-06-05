@@ -168,7 +168,7 @@
 			"id" : 10,
 			"score" : 120,
 			"question_str": [
-				"What is does Potnia Theron",
+				"What is does 'Potnia Theron'",
 				"mean?"
 			],
 			"responses": [
@@ -259,7 +259,7 @@
 			"id" : 15,
 			"score" : 75,
 			"question_str": [
-				"What was the 'aegis'?"
+				"What is the 'aegis'?"
 			],
 			"responses": [
 				"Ancient Greek artifact",
@@ -277,7 +277,7 @@
 			"id" : 16,
 			"score" : 100,
 			"question_str": [
-				"What was the 'omphalos'?"
+				"What is the 'omphalos'?"
 			],
 			"responses": [
 				"Stone given to Cronus in Zeus' place",
@@ -288,6 +288,167 @@
 			"correct_response" : "Stone given to Cronus in Zeus' place",
 			"description" : [
 				"The word 'omphalos' mean 'navel'."
+			]
+		},
+		{
+			"id" : 17,
+			"score" : 50,
+			"question_str": [
+				"What does 'hieros gamos' mean?"
+			],
+			"responses": [
+				"Sacred marriage",
+				"God-like",
+				"Hero's gifts",
+				"Not a Greek phrase"
+			],
+			"correct_response" : "Sacred marriage",
+			"description" : [
+				"Uranus and Gaea had a 'hieros gamos';",
+				"sacred marriage between earth and sky."
+			]
+		},
+		{
+			"id" : 18,
+			"score" : 50,
+			"question_str": [
+				"What does 'polis' mean?"
+			],
+			"responses": [
+				"City",
+				"Police",
+				"Political structure",
+				"Village"
+			],
+			"correct_response" : "City",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 19,
+			"score" : 50,
+			"question_str": [
+				"Typhon was the son of Chaos"
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"Typhon was actually the son",
+				"of Gaia. He was described as",
+				"having many dragon heads, many",
+				"hands, and had serpents for thighs."
+			]
+		},
+		{
+			"id" : 20,
+			"score" : 50,
+			"question_str": [
+				"What time period was known as",
+				"the Helenistic period?"
+			],
+			"responses": [
+				"323 BC - 30 BC",
+				"800 BC - 490 BC",
+				"3000 BC - 1600 BC",
+				"490 BC - 323 BC"
+			],
+			"correct_response" : "323 BC - 30 BC",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 21,
+			"score" : 50,
+			"question_str": [
+				"What is 'geras'?"
+			],
+			"responses": [
+				"Gifts of honor; prize",
+				"Marriage",
+				"Honor",
+				"Gold"
+			],
+			"correct_response" : "Gifts of honor; prize",
+			"description" : [
+				""
+			]
+		},
+		{
+			"id" : 22,
+			"score" : 75,
+			"question_str": [
+				"What were the 'kouroi'?"
+			],
+			"responses": [
+				"Artistic represenations of Greek male youth",
+				"Mystical Greek statues",
+				"Fearsome breed of sea monster",
+				"Nymphs"
+			],
+			"correct_response" : "Artistic represenations of Greek male youth",
+			"description" : [
+				"The kouroi were found in the",
+				"Archaic time period."
+			]
+		},
+		{
+			"id" : 23,
+			"score" : 75,
+			"question_str": [
+				"Which hero is the 'kibisis' most",
+				"associated with?"
+			],
+			"responses": [
+				"Perseus",
+				"Theseus",
+				"Heracles",
+				"Jason"
+			],
+			"correct_response" : "Perseus",
+			"description" : [
+				"The kibisis was the magical pouch",
+				"which held Medusa's head after Perseus",
+				"defeated her."
+			]
+		},
+		{
+			"id" : 24,
+			"score" : 50,
+			"question_str": [
+				"What does 'psychopompus' mean?"
+			],
+			"responses": [
+				"Leader of souls",
+				"Crazy marching leader",
+				"Mind leader"
+			],
+			"correct_response" : "Leader of souls",
+			"description" : [
+				"Hermes was most associated with",
+				"this term. He was the guider of souls",
+				"into the underworld."
+			]
+		},
+		{
+			"id" : 25,
+			"score" : 50,
+			"question_str": [
+				"What is a 'thyrsus'?"
+			],
+			"responses": [
+				"Staff covered topped with pine cone",
+				"A staff used by Herme's followers",
+				"A harvesting tool",
+				"Not a Greek related item"
+			],
+			"correct_response" : "",
+			"description" : [
+				"Staff covered topped with pine cone"
 			]
 		}
 	]
