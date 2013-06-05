@@ -68,7 +68,7 @@
 			],
 			"correct_response" : "2100 BC",
 			"description" : [
-				""
+				"The correct answer is 2100 BC"
 			]
 		},
 		{
@@ -105,9 +105,7 @@
 			],
 			"correct_response" : "30 BC - 1453 BC",
 			"description" : [
-				"The Romans were heavily influenced",
-				"by Greek culture and incorporated it",
-				"into their own culture."
+				"The correct answer is 30 BC - 1453 BC."
 			]
 		},
 		{
@@ -125,7 +123,7 @@
 			],
 			"correct_response" : "3000 BC - 1600 BC",
 			"description" : [
-				""
+				"The correct answer is 3000 BC - 1600 BC."
 			]
 		},
 		{
@@ -143,7 +141,7 @@
 			],
 			"correct_response" : "490 BC - 323 BC",
 			"description" : [
-				""
+				"The correct answer is 490 BC - 323 BC."
 			]
 		},
 		{
@@ -161,7 +159,7 @@
 			],
 			"correct_response" : "800 BC - 490 BC",
 			"description" : [
-				""
+				"The correct answer is 800 BC - 490 BC"
 			]
 		},
 		{
@@ -322,7 +320,7 @@
 			],
 			"correct_response" : "City",
 			"description" : [
-				""
+				"It literally means city." 
 			]
 		},
 		{
@@ -335,7 +333,7 @@
 				"True",
 				"False"
 			],
-			"correct_response" : "True",
+			"correct_response" : "False",
 			"description" : [
 				"Typhon was actually the son",
 				"of Gaia. He was described as",
@@ -358,7 +356,7 @@
 			],
 			"correct_response" : "323 BC - 30 BC",
 			"description" : [
-				""
+				"The correct answer is 323 BC - 30 BC."
 			]
 		},
 		{
@@ -392,7 +390,7 @@
 			],
 			"correct_response" : "Artistic represenations of Greek male youth",
 			"description" : [
-				"The kouroi were found in the",
+				"The kouroi statues were found in the",
 				"Archaic time period."
 			]
 		},
@@ -441,14 +439,520 @@
 				"What is a 'thyrsus'?"
 			],
 			"responses": [
-				"Staff covered topped with pine cone",
+				"Staff topped with a pine cone",
 				"A staff used by Herme's followers",
 				"A harvesting tool",
 				"Not a Greek related item"
 			],
-			"correct_response" : "",
+			"correct_response" : "Staff topped with pine cone",
 			"description" : [
-				"Staff covered topped with pine cone"
+				"The thyrsus was a staff topped",
+				"with a pine cone. It was also an",
+				"iconographic item of Dionysus."
+			]
+		},
+		{
+			"id" : 26,
+			"score" : 75,
+			"question_str": [
+				"What type of art work was",
+				"found in the dark ages?"
+			],
+			"responses": [
+				"Geometric art",
+				"Red-figure art",
+				"Black-figure art",
+				"Hellenistic art"
+			],
+			"correct_response" : "Geometric art",
+			"description" : [
+				"Geometric art was characterized by",
+				"by its use of simple shapes, such as",
+				"triangles, zigzags, etc..."
+			]
+		},
+		{
+			"id" : 27,
+			"score" : 75,
+			"question_str": [
+				"What type of art work was",
+				"found in the classical period?"
+			],
+			"responses": [
+				"Red-figure art",
+				"Black-figure art",
+				"Geometric art",
+				"Hellenistic art"
+			],
+			"correct_response" : "Red-figure art",
+			"description" : [
+				"Red-figure art is characterized",
+				"by figural depictions in red on top",
+				"of a black background, allowing for",
+				"more intricate details to be drawn."
+			]
+		},
+		{
+			"id" : 28,
+			"score" : 75,
+			"question_str": [
+				"What type of art work was",
+				"found in the Archaic period?"
+			],
+			"responses": [
+				"Black-figure art",
+				"Red-figure art",
+				"Hellenistic art",
+				"Geometric art"
+			],
+			"correct_response" : "Black-figure art",
+			"description" : [
+				"Black-figure art is characterized by",
+				"figural depictions in black atop a red",
+				"background."
+			]
+		},
+		{
+			"id" : 29,
+			"score" : 75,
+			"question_str": [
+				"What is 'kleos'?"
+			],
+			"responses": [
+				"Glory/Fame/Renown",
+				"Gifts of honor",
+				"Dishonor",
+				"Not a Greek term"
+			],
+			"correct_response" : "Glory/Fame/Renown",
+			"description" : [
+				"A Greek hero would earn 'kleos'",
+				"(Fame/Renown) by accomplishing great",
+				"deeds."
+			]
+		},
+		{
+			"id" : 30,
+			"score" : 50,
+			"question_str": [
+				"Aphrodite was closely associated",
+				"with the island of Cyprus."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"The island of Cyprus is where",
+				"Aphrodite originally came ashore",
+				"after being created as a consequence",
+				"of Uranus' castration."
+			]
+		},
+		{
+			"id" : 31,
+			"score" : 50,
+			"question_str": [
+				"Hera's Roman equivalent was Minerva"
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "False",
+			"description" : [
+				"Hera's Roman equivalent was actually",
+				"Juno."
+			]
+		},
+		{
+			"id" : 32,
+			"score" : 100,
+			"question_str": [
+				"What were Hera's spheres of",
+				"interest?"
+			],
+			"responses": [
+				"Marriage, sexuality (marriage), childbirth",
+				"Sex, power, jealousy",
+				"Intelligence, strategy",
+				"Power, wilderness, animals"
+			],
+			"correct_response" : "Marriage, sexuality (marriage), childbirth",
+			"description" : [
+				"Hera's spheres of interest included",
+				"marriage, sexuality within a marriage,",
+				"and she was also considered a childbirth",
+				"goddess."
+			]
+		},
+		{
+			"id" : 33,
+			"score" : 100,
+			"question_str": [
+				"Which Greek figure was Pegasus'",
+				"parent?"
+			],
+			"responses": [
+				"Medusa",
+				"Zeus",
+				"Hera",
+				"Euryale"
+			],
+			"correct_response" : "Medusa",
+			"description" : [
+				"In one version of the myth,",
+				"Pegasus was thought to be born",
+				"of the blood of Medusa as Perseus",
+				"was beheading her."
+			]
+		},
+		{
+			"id" : 34,
+			"score" : 100,
+			"question_str": [
+				"What were Vesta's iconographic items?"
+			],
+			"responses": [
+				"Kettle, hearth, veil",
+				"Peacock, pomegranate",
+				"Sword, kettle",
+				"Caduceus, wheat stalk, hearth"
+			],
+			"correct_response" : "Kettle, hearth, veil",
+			"description" : [
+				"Vesta (also known as Hestia in Greek",
+				"mythology) was a virgin goddess whose",
+				"symbols included the kettle, hearth, and",
+				"veil."
+			]
+		},
+		{
+			"id" : 35,
+			"score" : 50,
+			"question_str": [
+				"Amphitrite was the spouse of Poseidon."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"Amphitrite was in fact the primary consort",
+				"of Poseidon. She is not fully personified in",
+				"much literature; she was merely a symbol of",
+				"the sea. (wikipedia)."
+			]
+		},
+		{
+			"id" : 36,
+			"score" : 30,
+			"question_str": [
+				"What was Poseidon's primary",
+				"iconographic item?"
+			],
+			"responses": [
+				"Trident",
+				"Sceptre",
+				"Thunderbolt",
+				"Caduceus"
+			],
+			"correct_response" : "Trident",
+			"description" : [
+				"Poseidon's primary iconographic is",
+				"the Trident."
+			]
+		},
+		{
+			"id" : 37,
+			"score" : 75,
+			"question_str": [
+				"What was Hephaestus' Roman",
+				"equivalent?"
+			],
+			"responses": [
+				"Vulcan",
+				"Jupiter",
+				"Saturn",
+				"Neptune"
+			],
+			"correct_response" : "Vulcan",
+			"description" : [
+				"The Roman counterpart of",
+				"Hephaestus was Vulcan."
+			]
+		},
+		{
+			"id" : 38,
+			"score" : 75,
+			"question_str": [
+				"According to Hesiod, how many ages",
+				"of man were thought to exist?"
+			],
+			"responses": [
+				"5",
+				"3",
+				"6",
+				"2"
+			],
+			"correct_response" : "5",
+			"description" : [
+				"There were thought to be 5 different",
+				"ages of humans: Golden age, Silver age,",
+				"Bronze age, Heroic age, and the Iron age."
+			]
+		},
+		{
+			"id" : 39,
+			"score" : 50,
+			"question_str": [
+				"Athena's Roman counterpart was",
+				"Minerva."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"Athena's Roman counterpart was",
+				"in fact Minerva."
+			]
+		},
+		{
+			"id" : 40,
+			"score" : 100,
+			"question_str": [
+				"Who was Heracles' mother?"
+			],
+			"responses": [
+				"Apollodorus",
+				"Alcmene",
+				"Hera",
+				"Athena"
+			],
+			"correct_response" : "Alcmene",
+			"description" : [
+				"Alcmene was Heracles' mother",
+				"and Zeus was the father of Heracles."
+			]
+		},
+		{
+			"id" : 41,
+			"score" : 100,
+			"question_str": [
+				"Who taught Heracles the art",
+				"of wrestling?"
+			],
+			"responses": [
+				"Autolycus",
+				"Eurytus",
+				"Linus"
+			],
+			"correct_response" : "Autolycus",
+			"description" : [
+				"Although all previous individuals",
+				"taught Heracles, Autolycus taught",
+				"him how to wrestle.",
+				"",
+				"Eurytus   -> Archery",
+				"Linus     -> Lyre"
+			]
+		},
+		{
+			"id" : 42,
+			"score" : 100,
+			"question_str": [
+				"Heracles completed his 12 labours",
+				"as penance for murdering a king."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "False",
+			"description" : [
+				"Heracles actually completed his 12 labours",
+				"as penance for murdering his family, not",
+				"a king."
+			]
+		},
+		{
+			"id" : 43,
+			"score" : 100,
+			"question_str": [
+				"Which of the following was NOT",
+				"a labour of Heracles?"
+			],
+			"responses": [
+				"Cerberus",
+				"Girdle of Hippolya",
+				"Augean Stables",
+				"Sinis"
+			],
+			"correct_response" : "Sinis",
+			"description" : [
+				"Sinis was a bandit who would murder",
+				"unsuspecting travellers by tying the traveler",
+				"to two pine trees, which in turn ripped the",
+				"traveller apart. Sinis was actually a labour of",
+				"Theseus."
+			]
+		},
+		{
+			"id" : 44,
+			"score" : 50,
+			"question_str": [
+				"Theseus was a panhellenic hero."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "False",
+			"description" : [
+				"Theseus was not a panhellenic hero; he",
+				"was a hero of Athens, not for all of",
+				"Greece."
+			]
+		},
+		{
+			"id" : 45,
+			"score" : 50,
+			"question_str": [
+				"The Athenians were thought to have",
+				"descended from the earth itself."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"In one variation, the Athenians were",
+				"said to be autochthonus. In another version",
+				"the Athenians desceded from Cecrops, a man",
+				"who was half snake and half man."
+			]
+		},
+		{
+			"id" : 46,
+			"score" : 100,
+			"question_str": [
+				"Which Greek figure was given this",
+				"warning from a Delphi oracle:",
+				"'Do not open the wine skins until",
+				"you return home.'"
+			],
+			"responses": [
+				"Aegeus",
+				"Heracles",
+				"Minos",
+				"Theseus"
+			],
+			"correct_response" : "Aegeus",
+			"description" : [
+				"King Aegeus was given this warning",
+				"from the a Delphi oracle."
+			]
+		},
+		{
+			"id" : 47,
+			"score" : 50,
+			"question_str": [
+				"How many labors did Theseus have",
+				"to complete?"
+			],
+			"responses": [
+				"6",
+				"12",
+				"5",
+				"7"
+			],
+			"correct_response" : "6",
+			"description" : [
+				"Theseus had to complete 6 labours:",
+				"1. Periphetes",
+				"2. Sinis",
+				"3. Crommyonian Sow",
+				"4. Sciron",
+				"5. Circyon",
+				"6. Procrustes"
+			]
+		},
+		{
+			"id" : 48,
+			"score" : 50,
+			"question_str": [
+				"Medea added aided Jason in defeating",
+				"the bronze-hooved bulls by giving him",
+				"a magic sword."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "False",
+			"description" : [
+				"Medea actually gave him a magical",
+				"ointment to protect him from the bulls'",
+				"fire breath."
+			]
+		},
+		{
+			"id" : 49,
+			"score" : 100,
+			"question_str": [
+				"Greek witches primarily used",
+				"potions and herbal concoctions",
+				"in their craft."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"Greek witches did in fact use",
+				"potions as opposed to using spells."
+			]
+		},
+		{
+			"id" : 50,
+			"score" : 120,
+			"question_str": [
+				"Who was Heracles' first wife?"
+			],
+			"responses": [
+				"Megara",
+				"Meda",
+				"Epicaste",
+				"Phialo"
+			],
+			"correct_response" : "Megara",
+			"description" : [
+				"Megara was Heracles' first wife. He",
+				"also ends up murdering her and their",
+				"children."
+			]
+		},
+		{
+			"id" : 51,
+			"score" : 200,
+			"question_str": [
+				"BONUS: CLASS 102 is the most fun class",
+				"offered at the university."
+			],
+			"responses": [
+				"True",
+				"False"
+			],
+			"correct_response" : "True",
+			"description" : [
+				"CLASS 102 is in fact the most fun",
+				"class at the UoA. True story."
 			]
 		}
 	]
